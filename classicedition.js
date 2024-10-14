@@ -47,104 +47,106 @@ function corrections() {
 }
 
 function utiltext() {
-	return '&nbsp;&nbsp;&nbsp;&nbsp;If one "Utility" is owned rent is 4 times amount shown on dice.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;If both "Utilitys" are owned rent is 10 times amount shown on dice.';
+	return '&nbsp;&nbsp;&nbsp;&nbsp;Nếu một "Tiện ích" được sở hữu, tiền thuê là gấp 4 lần số điểm trên xúc xắc.<br /><br />&nbsp;&nbsp;&nbsp;&nbsp;Nếu cả hai "Tiện ích" được sở hữu, tiền thuê là gấp 10 lần số điểm trên xúc xắc.';
 }
 
 function transtext() {
-	return '<div style="font-size: 14px; line-height: 1.5;">Rent<span style="float: right;">$25.</span><br />If 2 Railroads are owned<span style="float: right;">50.</span><br />If 3 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">100.</span><br />If 4 &nbsp; &nbsp; " &nbsp; &nbsp; " &nbsp; &nbsp; "<span style="float: right;">200.</span></div>';
+	return '<div style="font-size: 14px; line-height: 1.5;">Tiền thuê<span style="float: right;">25.000 VNĐ.</span><br />Nếu sở hữu 2 ga xe lửa<span style="float: right;">50.000 VNĐ.</span><br />Nếu sở hữu 3 ga<span style="float: right;">100.000 VNĐ.</span><br />Nếu sở hữu 4 ga<span style="float: right;">200.000 VNĐ.</span></div>';
 }
 
 function luxurytax() {
-	addAlert(player[turn].name + " paid $100 for landing on Luxury Tax.");
+	addAlert(player[turn].name + " đã trả 100.000 VNĐ vì dừng tại Thuế xa xỉ.");
 	player[turn].pay(100, 0);
 
-	$("#landed").show().text("You landed on Luxury Tax. Pay $100.");
+	$("#landed").show().text("Bạn đã dừng tại Thuế xa xỉ. Trả 100.000 VNĐ.");
 }
 
 function citytax() {
-	addAlert(player[turn].name + " paid $200 for landing on City Tax.");
+	addAlert(player[turn].name + " đã trả 200.000 VNĐ vì dừng tại Thuế thành phố.");
 	player[turn].pay(200, 0);
 
-	$("#landed").show().text("You landed on City Tax. Pay $200.");
+	$("#landed").show().text("Bạn đã dừng tại Thuế thành phố. Trả 200.000 VNĐ.");
 }
+
 
 var square = [];
 
-square[0] = new Square("GO", "COLLECT $200 SALARY AS YOU PASS.", "#FFFFFF");
-square[1] = new Square("Mediterranean Avenue", "$60", "#8B4513", 60, 3, 2, 10, 30, 90, 160, 250);
-square[2] = new Square("Community Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[3] = new Square("Baltic Avenue", "$60", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
-square[4] = new Square("City Tax", "Pay $200", "#FFFFFF");
-square[5] = new Square("Reading Railroad", "$200", "#FFFFFF", 200, 1);
-square[6] = new Square("Oriental Avenue", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
-square[7] = new Square("Chance", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[8] = new Square("Vermont Avenue", "$100", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
-square[9] = new Square("Connecticut Avenue", "$120", "#87CEEB", 120, 4, 8, 40, 100, 300, 450, 600);
-square[10] = new Square("Just Visiting", "", "#FFFFFF");
-square[11] = new Square("St. Charles Place", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
-square[12] = new Square("Electric Company", "$150", "#FFFFFF", 150, 2);
-square[13] = new Square("States Avenue", "$140", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
-square[14] = new Square("Virginia Avenue", "$160", "#FF0080", 160, 5, 12, 60, 180, 500, 700, 900);
-square[15] = new Square("Pennsylvania Railroad", "$200", "#FFFFFF", 200, 1);
-square[16] = new Square("St. James Place", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
-square[17] = new Square("Community Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[18] = new Square("Tennessee Avenue", "$180", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
-square[19] = new Square("New York Avenue", "$200", "#FFA500", 200, 6, 16, 80, 220, 600, 800, 1000);
-square[20] = new Square("Free Parking", "", "#FFFFFF");
-square[21] = new Square("Kentucky Avenue", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
-square[22] = new Square("Chance", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[23] = new Square("Indiana Avenue", "$220", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
-square[24] = new Square("Illinois Avenue", "$240", "#FF0000", 240, 7, 20, 100, 300, 750, 925, 1100);
-square[25] = new Square("B&O Railroad", "$200", "#FFFFFF", 200, 1);
-square[26] = new Square("Atlantic Avenue", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
-square[27] = new Square("Ventnor Avenue", "$260", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
-square[28] = new Square("Water Works", "$150", "#FFFFFF", 150, 2);
-square[29] = new Square("Marvin Gardens", "$280", "#FFFF00", 280, 8, 24, 120, 360, 850, 1025, 1200);
-square[30] = new Square("Go to Jail", "Go directly to Jail. Do not pass GO. Do not collect $200.", "#FFFFFF");
-square[31] = new Square("Pacific Avenue", "$300", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
-square[32] = new Square("North Carolina Avenue", "$300", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
-square[33] = new Square("Community Chest", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[34] = new Square("Pennsylvania Avenue", "$320", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
-square[35] = new Square("Short Line", "$200", "#FFFFFF", 200, 1);
-square[36] = new Square("Chance", "FOLLOW INSTRUCTIONS ON TOP CARD", "#FFFFFF");
-square[37] = new Square("Park Place", "$350", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
-square[38] = new Square("LUXURY TAX", "Pay $100", "#FFFFFF");
-square[39] = new Square("Boardwalk", "$400", "#0000FF", 400, 10, 50, 200, 600, 1400, 1700, 2000);
+square[0] = new Square("Khởi hành", "NHẬN 200.000 VNĐ KHI ĐI QUA.", "#FFFFFF");
+square[1] = new Square("Phố Huế", "60.000 VNĐ", "#8B4513", 60, 3, 2, 10, 30, 90, 160, 250);
+square[2] = new Square("Hộp cộng đồng", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[3] = new Square("Đường Bạch Mai", "60.000 VNĐ", "#8B4513", 60, 3, 4, 20, 60, 180, 320, 450);
+square[4] = new Square("Thuế thu nhập", "Nộp 200.000 VNĐ", "#FFFFFF");
+square[5] = new Square("Ga Hà Nội", "200.000 VNĐ", "#FFFFFF", 200, 1);
+square[6] = new Square("Đường Tây Sơn", "100.000 VNĐ", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
+square[7] = new Square("Cơ hội", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[8] = new Square("Phố Đội Cấn", "100.000 VNĐ", "#87CEEB", 100, 4, 6, 30, 90, 270, 400, 550);
+square[9] = new Square("Đường Nguyễn Khánh Toàn", "120.000 VNĐ", "#87CEEB", 120, 4, 8, 40, 100, 300, 450, 600);
+square[10] = new Square("Trại giam", "", "#FFFFFF");
+square[11] = new Square("Phố Tràng Tiền", "140.000 VNĐ", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
+square[12] = new Square("Công ty Điện lực", "150.000 VNĐ", "#FFFFFF", 150, 2);
+square[13] = new Square("Phố Hàng Bài", "140.000 VNĐ", "#FF0080", 140, 5, 10, 50, 150, 450, 625, 750);
+square[14] = new Square("Phố Hàng Đào", "160.000 VNĐ", "#FF0080", 160, 5, 12, 60, 180, 500, 700, 900);
+square[15] = new Square("Ga Long Biên", "200.000 VNĐ", "#FFFFFF", 200, 1);
+square[16] = new Square("Phố Nhà Thờ", "180.000 VNĐ", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
+square[17] = new Square("Hộp cộng đồng", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[18] = new Square("Phố Hàng Mã", "180.000 VNĐ", "#FFA500", 180, 6, 14, 70, 200, 550, 750, 950);
+square[19] = new Square("Phố Hàng Ngang", "200.000 VNĐ", "#FFA500", 200, 6, 16, 80, 220, 600, 800, 1000);
+square[20] = new Square("Bãi đỗ xe miễn phí", "", "#FFFFFF");
+square[21] = new Square("Phố Đinh Tiên Hoàng", "220.000 VNĐ", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
+square[22] = new Square("Cơ hội", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[23] = new Square("Phố Lê Thái Tổ", "220.000 VNĐ", "#FF0000", 220, 7, 18, 90, 250, 700, 875, 1050);
+square[24] = new Square("Phố Lê Duẩn", "240.000 VNĐ", "#FF0000", 240, 7, 20, 100, 300, 750, 925, 1100);
+square[25] = new Square("Ga Gia Lâm", "200.000 VNĐ", "#FFFFFF", 200, 1);
+square[26] = new Square("Đường Nguyễn Trãi", "260.000 VNĐ", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
+square[27] = new Square("Đường Cầu Giấy", "260.000 VNĐ", "#FFFF00", 260, 8, 22, 110, 330, 800, 975, 1150);
+square[28] = new Square("Công ty Cấp nước", "150.000 VNĐ", "#FFFFFF", 150, 2);
+square[29] = new Square("Phố Ngọc Khánh", "280.000 VNĐ", "#FFFF00", 280, 8, 24, 120, 360, 850, 1025, 1200);
+square[30] = new Square("Vào tù", "Đi ngay vào tù. Không đi qua Khởi hành. Không nhận 200.000 VNĐ.", "#FFFFFF");
+square[31] = new Square("Phố Láng Hạ", "300.000 VNĐ", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
+square[32] = new Square("Phố Kim Mã", "300.000 VNĐ", "#008000", 300, 9, 26, 130, 390, 900, 1100, 1275);
+square[33] = new Square("Hộp cộng đồng", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[34] = new Square("Phố Giảng Võ", "320.000 VNĐ", "#008000", 320, 9, 28, 150, 450, 1000, 1200, 1400);
+square[35] = new Square("Ga Yên Viên", "200.000 VNĐ", "#FFFFFF", 200, 1);
+square[36] = new Square("Cơ hội", "THỰC HIỆN THEO HƯỚNG DẪN TRÊN THẺ", "#FFFFFF");
+square[37] = new Square("Phố Phan Đình Phùng", "350.000 VNĐ", "#0000FF", 350, 10, 35, 175, 500, 1100, 1300, 1500);
+square[38] = new Square("Thuế xa xỉ", "Nộp 100.000 VNĐ", "#FFFFFF");
+square[39] = new Square("Hồ Gươm", "400.000 VNĐ", "#0000FF", 400, 10, 50, 200, 600, 1400, 1700, 2000);
 
 var communityChestCards = [];
 var chanceCards = [];
 
-communityChestCards[0] = new Card("Get out of Jail, Free. This card may be kept until needed or sold.", function(p) { p.communityChestJailCard = true; updateOwned();});
-communityChestCards[1] = new Card("You have won second prize in a beauty contest. Collect $10.", function() { addamount(10, 'Community Chest');});
-communityChestCards[2] = new Card("From sale of stock, you get $50.", function() { addamount(50, 'Community Chest');});
-communityChestCards[3] = new Card("Life insurance matures. Collect $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[4] = new Card("Income tax refund. Collect $20.", function() { addamount(20, 'Community Chest');});
-communityChestCards[5] = new Card("Holiday fund matures. Receive $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[6] = new Card("You inherit $100.", function() { addamount(100, 'Community Chest');});
-communityChestCards[7] = new Card("Receive $25 consultancy fee.", function() { addamount(25, 'Community Chest');});
-communityChestCards[8] = new Card("Pay hospital fees of $100.", function() { subtractamount(100, 'Community Chest');});
-communityChestCards[9] = new Card("Bank error in your favor. Collect $200.", function() { addamount(200, 'Community Chest');});
-communityChestCards[10] = new Card("Pay school fees of $50.", function() { subtractamount(50, 'Community Chest');});
-communityChestCards[11] = new Card("Doctor's fee. Pay $50.", function() { subtractamount(50, 'Community Chest');});
-communityChestCards[12] = new Card("It is your birthday. Collect $10 from every player.", function() { collectfromeachplayer(10, 'Community Chest');});
-communityChestCards[13] = new Card("Advance to \"GO\" (Collect $200).", function() { advance(0);});
-communityChestCards[14] = new Card("You are assessed for street repairs. $40 per house. $115 per hotel.", function() { streetrepairs(40, 115);});
-communityChestCards[15] = new Card("Go to Jail. Go directly to Jail. Do not pass \"GO\". Do not collect $200.", function() { gotojail();});
+communityChestCards[0] = new Card("Thoát khỏi nhà tù miễn phí. Bạn có thể giữ thẻ này cho đến khi cần hoặc bán.", function(p) { p.communityChestJailCard = true; updateOwned();});
+communityChestCards[1] = new Card("Bạn giành giải nhì trong cuộc thi sắc đẹp. Nhận 10.000 VNĐ.", function() { addamount(10, 'Hộp cộng đồng');});
+communityChestCards[2] = new Card("Từ việc bán cổ phiếu, bạn nhận được 50.000 VNĐ.", function() { addamount(50, 'Hộp cộng đồng');});
+communityChestCards[3] = new Card("Bảo hiểm nhân thọ đến hạn. Nhận 100.000 VNĐ.", function() { addamount(100, 'Hộp cộng đồng');});
+communityChestCards[4] = new Card("Hoàn thuế thu nhập. Nhận 20.000 VNĐ.", function() { addamount(20, 'Hộp cộng đồng');});
+communityChestCards[5] = new Card("Quỹ nghỉ lễ đến hạn. Nhận 100.000 VNĐ.", function() { addamount(100, 'Hộp cộng đồng');});
+communityChestCards[6] = new Card("Bạn được thừa kế 100.000 VNĐ.", function() { addamount(100, 'Hộp cộng đồng');});
+communityChestCards[7] = new Card("Nhận 25.000 VNĐ phí tư vấn.", function() { addamount(25, 'Hộp cộng đồng');});
+communityChestCards[8] = new Card("Trả phí bệnh viện 100.000 VNĐ.", function() { subtractamount(100, 'Hộp cộng đồng');});
+communityChestCards[9] = new Card("Ngân hàng nhầm lẫn có lợi cho bạn. Nhận 200.000 VNĐ.", function() { addamount(200, 'Hộp cộng đồng');});
+communityChestCards[10] = new Card("Trả phí học 50.000 VNĐ.", function() { subtractamount(50, 'Hộp cộng đồng');});
+communityChestCards[11] = new Card("Phí bác sĩ. Trả 50.000 VNĐ.", function() { subtractamount(50, 'Hộp cộng đồng');});
+communityChestCards[12] = new Card("Hôm nay là sinh nhật bạn. Thu 10.000 VNĐ từ mỗi người chơi.", function() { collectfromeachplayer(10, 'Hộp cộng đồng');});
+communityChestCards[13] = new Card("Tiến đến \"Khởi hành\" (Nhận 200.000 VNĐ).", function() { advance(0);});
+communityChestCards[14] = new Card("Bạn phải sửa chữa đường phố. 40.000 VNĐ cho mỗi căn nhà, 115.000 VNĐ cho mỗi khách sạn.", function() { streetrepairs(40, 115);});
+communityChestCards[15] = new Card("Đi vào tù. Đi thẳng vào tù. Không đi qua \"Khởi hành\". Không nhận 200.000 VNĐ.", function() { gotojail();});
 
 
-chanceCards[0] = new Card("GET OUT OF JAIL FREE. This card may be kept until needed or traded.", function(p) { p.chanceJailCard=true; updateOwned();});
-chanceCards[1] = new Card("Make General Repairs on All Your Property. For each house pay $25. For each hotel $100.", function() { streetrepairs(25, 100);});
-chanceCards[2] = new Card("Speeding fine $15.", function() { subtractamount(15, 'Chance');});
-chanceCards[3] = new Card("You have been elected chairman of the board. Pay each player $50.", function() { payeachplayer(50, 'Chance');});
-chanceCards[4] = new Card("Go back three spaces.", function() { gobackthreespaces();});
-chanceCards[5] = new Card("ADVANCE TO THE NEAREST UTILITY. IF UNOWNED, you may buy it from the Bank. IF OWNED, throw dice and pay owner a total ten times the amount thrown.", function() { advanceToNearestUtility();});
-chanceCards[6] = new Card("Bank pays you dividend of $50.", function() { addamount(50, 'Chance');});
-chanceCards[7] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
-chanceCards[8] = new Card("Pay poor tax of $15.", function() { subtractamount(15, 'Chance');});
-chanceCards[9] = new Card("Take a trip to Reading Rail Road. If you pass \"GO\" collect $200.", function() { advance(5);});
-chanceCards[10] = new Card("ADVANCE to Boardwalk.", function() { advance(39);});
-chanceCards[11] = new Card("ADVANCE to Illinois Avenue. If you pass \"GO\" collect $200.", function() { advance(24);});
-chanceCards[12] = new Card("Your building loan matures. Collect $150.", function() { addamount(150, 'Chance');});
-chanceCards[13] = new Card("ADVANCE TO THE NEAREST RAILROAD. If UNOWNED, you may buy it from the Bank. If OWNED, pay owner twice the rental to which they are otherwise entitled.", function() { advanceToNearestRailroad();});
-chanceCards[14] = new Card("ADVANCE to St. Charles Place. If you pass \"GO\" collect $200.", function() { advance(11);});
-chanceCards[15] = new Card("Go to Jail. Go Directly to Jail. Do not pass \"GO\". Do not collect $200.", function() { gotojail();});
+
+chanceCards[0] = new Card("Thoát khỏi nhà tù miễn phí. Bạn có thể giữ thẻ này cho đến khi cần hoặc trao đổi.", function(p) { p.chanceJailCard=true; updateOwned();});
+chanceCards[1] = new Card("Sửa chữa tất cả tài sản của bạn. Trả 25.000 VNĐ cho mỗi căn nhà, 100.000 VNĐ cho mỗi khách sạn.", function() { streetrepairs(25, 100);});
+chanceCards[2] = new Card("Phạt tốc độ 15.000 VNĐ.", function() { subtractamount(15, 'Cơ hội');});
+chanceCards[3] = new Card("Bạn được bầu làm chủ tịch hội đồng. Trả cho mỗi người chơi 50.000 VNĐ.", function() { payeachplayer(50, 'Cơ hội');});
+chanceCards[4] = new Card("Quay lại ba ô.", function() { gobackthreespaces();});
+chanceCards[5] = new Card("Tiến đến tiện ích gần nhất. Nếu chưa có người sở hữu, bạn có thể mua từ Ngân hàng. Nếu đã có người sở hữu, tung xúc xắc và trả chủ sở hữu gấp 10 lần số tiền tung được.", function() { advanceToNearestUtility();});
+chanceCards[6] = new Card("Ngân hàng trả cho bạn cổ tức 50.000 VNĐ.", function() { addamount(50, 'Cơ hội');});
+chanceCards[7] = new Card("Tiến đến ga xe lửa gần nhất. Nếu chưa có người sở hữu, bạn có thể mua từ Ngân hàng. Nếu đã có người sở hữu, trả chủ sở hữu gấp đôi tiền thuê.", function() { advanceToNearestRailroad();});
+chanceCards[8] = new Card("Trả thuế người nghèo 15.000 VNĐ.", function() { subtractamount(15, 'Cơ hội');});
+chanceCards[9] = new Card("Đi đến ga xe lửa Hà Nội. Nếu bạn đi qua \"Khởi hành\", nhận 200.000 VNĐ.", function() { advance(5);});
+chanceCards[10] = new Card("Tiến đến Phố đi bộ.", function() { advance(39);});
+chanceCards[11] = new Card("Tiến đến đường Lý Thái Tổ. Nếu bạn đi qua \"Khởi hành\", nhận 200.000 VNĐ.", function() { advance(24);});
+chanceCards[12] = new Card("Khoản vay xây dựng của bạn đã đáo hạn. Nhận 150.000 VNĐ.", function() { addamount(150, 'Cơ hội');});
+chanceCards[13] = new Card("Tiến đến ga xe lửa gần nhất. Nếu chưa có người sở hữu, bạn có thể mua từ Ngân hàng. Nếu đã có người sở hữu, trả chủ sở hữu gấp đôi tiền thuê.", function() { advanceToNearestRailroad();});
+chanceCards[14] = new Card("Tiến đến Phố Bùi Viện. Nếu bạn đi qua \"Khởi hành\", nhận 200.000 VNĐ.", function() { advance(11);});
+chanceCards[15] = new Card("Đi vào tù. Đi thẳng vào tù. Không đi qua \"Khởi hành\". Không nhận 200.000 VNĐ.", function() { gotojail();});

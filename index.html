@@ -1,16 +1,25 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-	<title>Monopoly</title>
-	<meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
-
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-	<script type="text/javascript" src="classicedition.js"></script>
-	<!-- Comment out the previous line and uncomment the next one to enable the New York City Edition -->
-	<!-- <script type="text/javascript" src="newyorkcityedition.js"></script> -->
-	<script type="text/javascript" src="ai.js"></script>
-	<script type="text/javascript" src="monopoly.js"></script>
-	<link rel="stylesheet" type="text/css" href="styles.css" />
+    <title>Monopoly - Game Setup</title>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="classicedition.js"></script>
+    <script type="text/javascript" src="ai.js"></script>
+    <script type="text/javascript" src="monopoly.js"></script>
+    <script type="text/javascript" src="script.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles.css" />
+    <link rel="icon" href="data:,">
+    <script>
+        console.log("JavaScript is working!");
+        window.onload = function() {
+            console.log("Window loaded!");
+        };
+        window.onerror = function(message, source, lineno, colno, error) {
+            console.log("Error: " + message + " at " + source + ":" + lineno);
+        };
+    </script>
+  
 </head>
 
 <body>
@@ -35,16 +44,29 @@
 			</div>
 		</div>
 	</div>
-
-	<p id="noscript">
-		Note: This page will not function without JavaScript.
-	</p>
-
-	<div id="refresh">
-		Refresh this page to start a new game.
-	</div>
+	
 
 	<!-- <div id="enlarge"></div> -->
+
+	<div id="setup">
+		<h2>Welcome to Monopoly!</h2>
+		<h3>Create or Join a Game</h3>
+		<div>
+			<input type="text" id="gameIdInput" placeholder="Enter Game ID" />
+			<input type="button" id="createGameButton" value="Create Game" onclick="createGame();" title="Create a new game." />
+			<input type="button" id="joinGameButton" value="Join Game" onclick="joinGame();" title="Join the game." />
+		</div>
+		<div id="gameIdDisplay" style="margin-top: 10px; display: none;">
+			<strong>Your Game ID:</strong> <span id="generatedGameId"></span>
+		</div>
+		<div id="loadingMessage" style="display: none;">Connecting to the server...</div>
+		<div id="gameIdDisplay" style="margin-top: 10px; display: none;">
+			<strong>Your Game ID:</strong> <span id="generatedGameId"></span>
+		</div>
+		<div style="margin-top: 20px;">
+			<input type="button" id="startGameButton" value="Start Game" onclick="startGame();" title="Start the game." style="display: none;" />
+		</div>
+	</div>
 
 	<div id="deed">
 		<div id="deed-normal" style="display: none;">
@@ -508,7 +530,7 @@
 					</div>
 				</td>
 				<td style="vertical-align: top; border: none;">
-					<div id="quickstats" style="">
+					<div id="quickstats">
 							<div><span id="pname" >Player 1</span>:</div>
 							<div><span id="pmoney">$1500</span></div>
 					</div>
